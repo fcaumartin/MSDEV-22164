@@ -16,10 +16,37 @@ class AppFixtures extends Fixture
         $c1->setNom("Guitares");
         $manager->persist($c1);
 
+        $c2 = new Categorie();
+        $c2->setNom("Percussions");
+        $manager->persist($c2);
+
+        $c3 = new Categorie();
+        $c3->setNom("Sono");
+        $manager->persist($c3);
+
+        $c4 = new Categorie();
+        $c4->setNom("DJ");
+        $manager->persist($c4);
+
         $sc1 = new SousCategorie();
         $sc1->setNom("Guitares Electriques");
         $sc1->setCategorie($c1);
         $manager->persist($sc1);
+
+        $sc2 = new SousCategorie();
+        $sc2->setNom("Guitares 222");
+        $sc2->setCategorie($c1);
+        $manager->persist($sc2);
+
+        $sc3 = new SousCategorie();
+        $sc3->setNom("Guitares 333");
+        $sc3->setCategorie($c1);
+        $manager->persist($sc3);
+
+        $sc4 = new SousCategorie();
+        $sc4->setNom("Guitares 444");
+        $sc4->setCategorie($c1);
+        $manager->persist($sc4);
 
 
         $p1 = new Produit();

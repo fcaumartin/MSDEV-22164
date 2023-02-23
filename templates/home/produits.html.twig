@@ -8,12 +8,12 @@
 <div class="container">
     <div class="row">
     
-        {% for categorie in categories %}
+        {% for pr in produits %}
 
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 text-center ">
+            <div class="col-12  text-center ">
                 <div class="m-1 vignette">
-                    <a href="/categorie/{{ categorie.id }}">
-                        {{ categorie.nom }}
+                    <a href="/prioduit/{{ pr.id }}">
+                        {{ pr.nom }}
                     </a>
                 </div>
             </div>
