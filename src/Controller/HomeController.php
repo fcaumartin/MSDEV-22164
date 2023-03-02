@@ -2,6 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Produit;
+use App\Entity\Categorie;
+use App\Entity\SousCategorie;
 use App\Repository\ProduitRepository;
 use App\Repository\CategorieRepository;
 use App\Repository\SousCategorieRepository;
@@ -21,29 +24,30 @@ class HomeController extends AbstractController
         ]);
     }
 
-    #[Route('/categorie/{id}', name: 'app_categorie')]
-    public function categorie(SousCategorieRepository $repo, $id): Response
+    #[Route('/categorie/{categorie}', name: 'app_categorie')]
+    public function categorie(Categorie $categorie): Response
     {
-        
-        $souscategories = $repo->findBy([
-            "categorie" => $id
-        ]);
-
+                
         return $this->render('home/categorie.html.twig', [
-            "souscategories" => $souscategories
+            "categorie" => $categorie
         ]);
     }
 
-    #[Route('/souscategorie/{id}', name: 'app_souscategorie')]
-    public function souscategorie(ProduitRepository $repo, $id): Response
+    #[Route('/souscategorie/{sousCategorie}', name: 'app_souscategorie')]
+    public function souscategorie(SousCategorie $sousCategorie): Response
     {
         
-        $produits = $repo->findBy([
-            "sousCategorie" => $id
-        ]);
-
         return $this->render('home/produits.html.twig', [
-            "produits" => $produits
+            "sousCategorie" => $sousCategorie
+        ]);
+    }
+
+    #[Route('/produit/{produit}', name: 'app_produit')]
+    public function produit(Produit $produit): Response
+    {
+        
+        return $this->render('home/produit.html.twig', [
+            "produit" => $produit
         ]);
     }
 }

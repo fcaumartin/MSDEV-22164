@@ -7,12 +7,13 @@
 
 <div class="container">
     <div class="row">
+    <h1>{{sousCategorie.nom}}</h1>
     
-        {% for pr in produits %}
+        {% for pr in sousCategorie.produits %}
 
             <div class="col-12  text-center ">
                 <div class="m-1 vignette">
-                    <a href="/prioduit/{{ pr.id }}">
+                    <a href="/produit/{{ pr.id }}">
                         {{ pr.nom }}
                     </a>
                 </div>

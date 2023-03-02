@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PanierController!{% endblock %}
+
+{% block body %}
+
+<div class="container">
+<div class="row">
+    {% for produit in panier %}
+        <div>
+            {{produit.nom}}
+        </div>
+
+
+    {% endfor %}
+</div>
+</div>
+
+
+{% endblock %}
